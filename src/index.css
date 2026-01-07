@@ -226,6 +226,7 @@ h6 {
 }
 
 .header__logo img {
+  filter: brightness(1.5) saturate(1.2);
   mix-blend-mode: multiply;
   height: 120px;
   width: auto;
