@@ -225,6 +225,7 @@ h6 {
 }
 
 .header__logo img {
+  mix-blend-mode: multiply;
   height: 120px;
   width: auto;
 }
