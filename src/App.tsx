@@ -83,7 +83,7 @@ function App() {
         params.append(key, String(value))
       })
 
-      await fetch('https://n8n.hcaa-ia.cloud/webhook-test/99267fac-2f0a-4908-9c2d-ab6cb26ce60e', {
+      await fetch('https://n8n.hcaa-ia.cloud/webhook/99267fac-2f0a-4908-9c2d-ab6cb26ce60e', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
