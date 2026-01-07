@@ -785,6 +785,45 @@ function App() {
                   </div>
                 </div>
               </div>
+
+              {/* Nuevo contacto: Antonio Huerta Contreras */}
+              <div className="contact-card" style={{ marginTop: '24px' }}>
+                <div className="contact-card__header">
+                  <div className="contact-card__avatar">
+                    <Icon name="user" size={32} />
+                  </div>
+                  <div className="contact-card__name">
+                    <h3>ANTONIO</h3>
+                    <h3>HUERTA CONTRERAS</h3>
+                    <span className="contact-card__title">Chief Technology Officer</span>
+                  </div>
+                </div>
+
+                <div className="contact-card__company">
+                  <div className="contact-card__logo">
+                    <span className="contact-card__logo-icon">HC</span>
+                  </div>
+                  <span className="contact-card__company-name">HC Advanced Automation</span>
+                </div>
+
+                <div className="contact-card__info">
+                  <div className="contact-card__item">
+                    <Icon name="phone" size={16} />
+                    <a href="tel:+14238038252">+1 (423) 803-8252</a>
+                  </div>
+                  <div className="contact-card__item">
+                    <Icon name="globe" size={16} />
+                    <a href="http://www.hcaa.com.mx" target="_blank" rel="noopener noreferrer">www.hcaa.com.mx</a>
+                  </div>
+                  <div className="contact-card__item contact-card__item--address">
+                    <Icon name="map-pin" size={16} />
+                    <address>
+                      1107 McBrien Rd East Ridge<br />
+                      37412 TN.
+                    </address>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
