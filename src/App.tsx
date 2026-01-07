@@ -76,14 +76,20 @@ function App() {
     console.log('Enviando datos al webhook:', webhookData)
 
     try {
-      // Enviar datos al webhook usando fetch
+      // Enviar datos al webhook usando URLSearchParams (x-www-form-urlencoded)
+      // Esto asegura que n8n parsee los campos individualmente como un formulario nativo
+      const params = new URLSearchParams()
+      Object.entries(webhookData).forEach(([key, value]) => {
+        params.append(key, String(value))
+      })
+
       await fetch('https://n8n.hcaa-ia.cloud/webhook-test/99267fac-2f0a-4908-9c2d-ab6cb26ce60e', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
+          'Content-Type': 'application/x-www-form-urlencoded',
         },
-        body: JSON.stringify(webhookData),
-        mode: 'no-cors' // Para evitar problemas de CORS
+        body: params,
+        mode: 'no-cors'
       })
 
       console.log('Webhook enviado exitosamente')
