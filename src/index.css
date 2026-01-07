@@ -206,7 +206,7 @@ h6 {
   right: 0;
   z-index: 100;
   padding: var(--space-4) 0;
-  background: rgba(2, 6, 23, 0.85);
+  background: rgba(15, 23, 42, 0.95);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(148, 163, 184, 0.08);
 }
