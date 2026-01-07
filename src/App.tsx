@@ -69,7 +69,7 @@ function App() {
       telefono: `${formData.codigoPais} ${formData.celular}`,
       mensaje: formData.mensaje,
       acepta_terminos: formData.aceptaTerminos,
-      fecha_envio: new Date().toISOString(),
+      fecha_envio: new Date().toLocaleString('es-MX', { timeZone: 'America/Mexico_City', hour12: false }),
       origen: 'Landing Blue Brain'
     }
 
