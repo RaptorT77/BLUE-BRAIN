@@ -75,38 +75,26 @@ function App() {
 
     console.log('Enviando datos al webhook:', webhookData)
 
-    // Crear un iframe oculto para el envío
-    const iframe = document.createElement('iframe')
-    iframe.name = 'hidden_iframe'
-    iframe.style.display = 'none'
-    document.body.appendChild(iframe)
+    try {
+      // Enviar datos al webhook usando fetch
+      await fetch('https://n8n.hcaa-ia.cloud/webhook-test/99267fac-2f0a-4908-9c2d-ab6cb26ce60e', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(webhookData),
+        mode: 'no-cors' // Para evitar problemas de CORS
+      })
 
-    // Crear un formulario dinámico
-    const form = document.createElement('form')
-    form.method = 'POST'
-    form.action = 'https://n8n.hcaa-ia.cloud/webhook-test/99267fac-2f0a-4908-9c2d-ab6cb26ce60e'
-    form.target = 'hidden_iframe'
+      console.log('Webhook enviado exitosamente')
 
-    // Agregar cada campo como input hidden
-    Object.entries(webhookData).forEach(([key, value]) => {
-      const input = document.createElement('input')
-      input.type = 'hidden'
-      input.name = key
-      input.value = String(value)
-      form.appendChild(input)
-    })
-
-    document.body.appendChild(form)
-    form.submit()
-
-    // Limpiar después del envío
-    setTimeout(() => {
-      document.body.removeChild(form)
-      document.body.removeChild(iframe)
-    }, 1000)
-
-    // Mostrar mensaje de éxito
-    alert('¡Gracias! Tu solicitud ha sido enviada. Nos pondremos en contacto pronto.')
+      // Mostrar mensaje de éxito
+      alert('¡Gracias! Tu solicitud ha sido enviada. Nos pondremos en contacto pronto.')
+    } catch (error) {
+      console.error('Error al enviar webhook:', error)
+      alert('Hubo un error al enviar tu solicitud. Por favor intenta de nuevo.')
+      return // No limpiar el formulario si hubo error
+    }
     setFormData({
       nombre: '',
       apellido: '',
