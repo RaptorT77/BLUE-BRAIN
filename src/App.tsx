@@ -84,7 +84,7 @@ function App() {
     // Crear un formulario dinámico
     const form = document.createElement('form')
     form.method = 'POST'
-    form.action = 'https://n8n.hcaa-ia.cloud/webhook/99267fac-2f0a-4908-9c2d-ab6cb26ce60e'
+    form.action = 'https://n8n.hcaa-ia.cloud/webhook-test/99267fac-2f0a-4908-9c2d-ab6cb26ce60e'
     form.target = 'hidden_iframe'
 
     // Agregar cada campo como input hidden
